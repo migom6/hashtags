@@ -1,0 +1,53 @@
+curl -X POST \
+  -H "Authorization: Key d4a8050a95d043aba98fb21a2f68c087" \
+  -H "Content-Type: application/json" \
+  -d '
+  {
+    "inputs": [
+      {
+        "data": {
+          "image": {
+            "base64": "'"$(base64 /Users/migom/Desktop/flask-server/image.jpg)"'"
+          }
+        }
+      }
+    ]
+  }'\
+  https://api.clarifai.com/v2/models/aaa03c23b3724a16a56b629203edc62c/outputs
+
+
+  curl -X POST \
+  -H "Authorization: Key d4a8050a95d043aba98fb21a2f68c087" \
+  -H "Content-Type: application/json" \
+  -d @- https://api.clarifai.com/v2/models/aaa03c23b3724a16a56b629203edc62c/outputs << FILEIN
+  {
+    "inputs": [
+      {
+        "data": {
+          "image": {
+            "base64": "$(base64 /Users/migom/Desktop/flask-server/image.jpg)"
+          }
+        }
+      }
+    ]
+  }
+FILEIN
+
+https://requestb.in/129uzc51
+
+curl -X POST \
+  -H "Authorization: Key d4a8050a95d043aba98fb21a2f68c087" \
+  -H "Content-Type: application/json" \
+  -d @- https://requestb.in/129uzc51 << FILEIN
+  {
+    "inputs": [
+      {
+        "data": {
+          "image": {
+            "base64": "$(base64 /Users/migom/Desktop/flask-server/image.jpg)"
+          }
+        }
+      }
+    ]
+  }
+FILEIN
